@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A2Z Events & Design · Wedding & Event Décor · Corona, CA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: #FFFFFF;
+      color: #2A2010;
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: #FFFFFF;
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 4px solid #C9A84C;
+    }
+    .hero-frame {
+      display: inline-block;
+      border: 3px solid #C9A84C;
+      padding: 2.5rem 3rem;
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+    }
+    .hero-frame::before, .hero-frame::after {
+      content: '';
+      position: absolute;
+      width: 20px; height: 20px;
+      border-color: #C9A84C;
+      border-style: solid;
+    }
+    .hero-frame::before { top: -7px; left: -7px; border-width: 4px 0 0 4px; }
+    .hero-frame::after  { bottom: -7px; right: -7px; border-width: 0 4px 4px 0; }
+    .corner-tr {
+      position: absolute; width: 20px; height: 20px;
+      border-color: #C9A84C; border-style: solid;
+      top: -7px; right: -7px; border-width: 4px 4px 0 0;
+    }
+    .corner-bl {
+      position: absolute; width: 20px; height: 20px;
+      border-color: #C9A84C; border-style: solid;
+      bottom: -7px; left: -7px; border-width: 0 0 4px 4px;
+    }
+
+    .eyebrow {
+      font-size: 10px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: #B8942A; margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3rem, 9vw, 5rem);
+      font-weight: 400; color: #B8942A;
+      line-height: 1.15; margin-bottom: 0.5rem;
+    }
+    .hero-sub {
+      font-size: 13px; font-weight: 300;
+      color: #8A7040; letter-spacing: 0.06em; margin-bottom: 2rem;
+    }
+    .hero-cta {
+      display: inline-block; padding: 0.7rem 2.4rem;
+      border: 3px solid #C9A84C; color: #C9A84C;
+      font-family: 'Jost', sans-serif;
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; background: transparent;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .hero-cta:hover { background: #C9A84C; color: #FFF; }
+
+    /* ── DIVIDER ── */
+    .divider { text-align: center; padding: 1.8rem 0; background: #FFFFFF; }
+    .divider.slim { padding: 0.5rem 0 1.5rem; }
+
+    /* ── SECTIONS ── */
+    .section-wrap { padding: 3rem 2rem; }
+    .section-wrap.alt {
+      background: #FFFDF5;
+      border-top: 3px solid #C9A84C;
+      border-bottom: 3px solid #C9A84C;
+    }
+    .sec-label {
+      font-size: 10px; letter-spacing: 0.26em;
+      text-transform: uppercase; color: #C9A84C; margin-bottom: 0.6rem;
+    }
+    .sec-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 400; color: #B8942A;
+      margin-bottom: 1rem; line-height: 1.3;
+    }
+
+    /* ── ABOUT ── */
+    .about-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+    .about-inner p { font-size: 13px; color: #6A5830; font-weight: 300; line-height: 1.9; }
+
+    /* ── GALLERY ── */
+    .gallery-hd { text-align: center; margin-bottom: 2rem; }
+    .masonry { columns: 3; column-gap: 10px; max-width: 780px; margin: 0 auto; }
+    .m-item { break-inside: avoid; margin-bottom: 10px; border: 2px solid #C9A84C; }
+    .m-img {
+      width: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 6px; background: #FFFDF5;
+    }
+    .m-lbl {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px; font-style: italic; color: #C9A84C;
+      padding-bottom: 8px;
+    }
+    .gallery-note {
+      text-align: center; margin-top: 1.5rem;
+      font-size: 12px; color: #C9A84C;
+      font-style: italic; font-family: 'Cormorant Garamond', serif; opacity: 0.7;
+    }
+
+    /* ── SERVICES ── */
+    .svc-hd { text-align: center; margin-bottom: 2rem; }
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0; max-width: 700px; margin: 0 auto;
+      border: 3px solid #C9A84C;
+    }
+    .svc-card {
+      padding: 1.6rem 1.2rem; text-align: center;
+      border-right: 2px solid #E8D898;
+      border-bottom: 2px solid #E8D898;
+    }
+    .svc-card:last-child { border-right: none; }
+    .svc-icon { font-size: 20px; color: #C9A84C; display: block; margin-bottom: 0.7rem; }
+    .svc-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: #B8942A;
+      margin-bottom: 0.3rem; font-weight: 400;
+    }
+    .svc-desc { font-size: 12px; color: #8A7040; font-weight: 300; line-height: 1.55; }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: #FFFFFF; padding: 3rem 2rem;
+      border-top: 4px solid #C9A84C;
+    }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; max-width: 700px; margin: 0 auto; align-items: start;
+    }
+    .contact-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.4rem; font-weight: 400;
+      color: #B8942A; margin-bottom: 0.4rem; line-height: 1.3;
+    }
+    .contact-sub { font-size: 12px; color: #9A8040; margin-bottom: 1.6rem; font-weight: 300; }
+    .c-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 1rem; }
+    .c-row i { font-size: 15px; color: #C9A84C; flex-shrink: 0; margin-top: 2px; }
+    .c-lbl {
+      font-size: 10px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #B8A060; margin-bottom: 2px;
+    }
+    .c-val { font-size: 13px; color: #4A3A10; font-weight: 300; }
+    .c-val a { color: #4A3A10; text-decoration: none; }
+    .c-val a:hover { color: #C9A84C; }
+
+    .soc-label { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8A060; margin-bottom: 0.8rem; }
+    .soc-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .soc {
+      display: flex; align-items: center; gap: 6px;
+      padding: 0.4rem 0.85rem;
+      border: 2px solid #C9A84C; color: #B8942A;
+      font-size: 12px; font-weight: 300; cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .soc:hover { background: #C9A84C; color: #FFF; }
+
+    .quote-block {
+      border: 2px solid #E8D898; border-left: 5px solid #C9A84C;
+      padding: 1rem 1.2rem; margin-top: 2rem; background: #FFFDF5;
+    }
+    .quote-block p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem; font-style: italic; color: #9A8040; line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #FFFDF5;
+      border-top: 4px solid #C9A84C;
+      text-align: center; padding: 1.1rem;
+      font-size: 11px; color: #C9A84C; letter-spacing: 0.14em;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .masonry { columns: 2; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .hero-frame { padding: 1.8rem 1.2rem; }
+      .svc-grid { grid-template-columns: 1fr 1fr; }
+      .svc-card:nth-child(2) { border-right: none; }
+      .svc-card:nth-child(3) { border-right: 2px solid #E8D898; }
+    }
+    @media (max-width: 380px) {
+      .masonry { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-frame">
+      <div class="corner-tr"></div>
+      <div class="corner-bl"></div>
+      <p class="eyebrow">Wedding &amp; Event Décor · Corona, CA</p>
+      <h1>A2Z Events<br>&amp; Design</h1>
+      <p class="hero-sub">Turning your dream day into a living, breathing memory</p>
+      <a href="#contact" class="hero-cta">Get in touch</a>
+    </div>
+  </header>
+
+  <!-- DIVIDER -->
+  <div class="divider" aria-hidden="true">
+    <svg width="320" height="30" viewBox="0 0 320 30" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="15" x2="118" y2="15" stroke="#C9A84C" stroke-width="2.5"/>
+      <line x1="202" y1="15" x2="320" y2="15" stroke="#C9A84C" stroke-width="2.5"/>
+      <polygon points="160,4 170,15 160,26 150,15" fill="#C9A84C"/>
+      <circle cx="130" cy="15" r="3" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="144" cy="15" r="2" fill="#C9A84C" opacity="0.4"/>
+      <circle cx="190" cy="15" r="3" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="176" cy="15" r="2" fill="#C9A84C" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section-wrap">
+    <div class="about-inner">
+      <p class="sec-label">About Us</p>
+      <h2 class="sec-title">Every Detail, Thoughtfully Placed</h2>
+      <p>We believe a wedding should feel like the two of you — unhurried, deeply personal, and unforgettable. From intimate garden ceremonies to grand ballroom receptions, A2Z Events &amp; Design brings warmth, artistry, and meticulous care to every arrangement, drape, and centerpiece.</p>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider slim" aria-hidden="true">
+    <svg width="320" height="30" viewBox="0 0 320 30" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="15" x2="118" y2="15" stroke="#C9A84C" stroke-width="2.5"/>
+      <line x1="202" y1="15" x2="320" y2="15" stroke="#C9A84C" stroke-width="2.5"/>
+      <polygon points="160,4 170,15 160,26 150,15" fill="#C9A84C"/>
+      <circle cx="130" cy="15" r="3" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="144" cy="15" r="2" fill="#C9A84C" opacity="0.4"/>
+      <circle cx="190" cy="15" r="3" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="176" cy="15" r="2" fill="#C9A84C" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- GALLERY -->
+  <section class="section-wrap alt">
+    <div class="gallery-hd">
+      <p class="sec-label">Our Work</p>
+      <h2 class="sec-title">A Glimpse of the Magic</h2>
+    </div>
+    <div class="masonry">
+      <div class="m-item">
+        <div class="m-img" style="height:175px;">
+          <i class="ti ti-flower" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Floral arch ceremony</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:130px;">
+          <i class="ti ti-candle" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Candlelit reception</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:150px;">
+          <i class="ti ti-stars" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Sweetheart table</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:140px;">
+          <i class="ti ti-heart" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Bridal garland</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:185px;">
+          <i class="ti ti-leaf" style="font-size:24px;color:#A0A878;"></i>
+          <span class="m-lbl">Garden aisle</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:120px;">
+          <i class="ti ti-gift" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Welcome table</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:160px;">
+          <i class="ti ti-sparkles" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Fairy-light canopy</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:135px;">
+          <i class="ti ti-balloon" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Balloon install</span>
+        </div>
+      </div>
+      <div class="m-item">
+        <div class="m-img" style="height:155px;">
+          <i class="ti ti-sun" style="font-size:24px;color:#C9A84C;"></i>
+          <span class="m-lbl">Outdoor reception</span>
+        </div>
+      </div>
+    </div>
+    <p class="gallery-note">Replace the placeholder tiles with your own photos by swapping in &lt;img&gt; tags</p>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider" aria-hidden="true">
+    <svg width="320" height="30" viewBox="0 0 320 30" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="15" x2="118" y2="15" stroke="#C9A84C" stroke-width="2.5"/>
+      <line x1="202" y1="15" x2="320" y2="15" stroke="#C9A84C" stroke-width="2.5"/>
+      <polygon points="160,4 170,15 160,26 150,15" fill="#C9A84C"/>
+      <circle cx="130" cy="15" r="3" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="144" cy="15" r="2" fill="#C9A84C" opacity="0.4"/>
+      <circle cx="190" cy="15" r="3" fill="#C9A84C" opacity="0.7"/>
+      <circle cx="176" cy="15" r="2" fill="#C9A84C" opacity="0.4"/>
+    </svg>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section-wrap">
+    <div class="svc-hd">
+      <p class="sec-label">What We Offer</p>
+      <h2 class="sec-title">Curated for Your Big Day</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <i class="ti ti-flower svc-icon"></i>
+        <p class="svc-name">Floral Design</p>
+        <p class="svc-desc">Bouquets, centerpieces, arches &amp; bespoke installations</p>
+      </div>
+      <div class="svc-card">
+        <i class="ti ti-layout svc-icon"></i>
+        <p class="svc-name">Table Styling</p>
+        <p class="svc-desc">Linens, place settings, runners &amp; tablescaping</p>
+      </div>
+      <div class="svc-card">
+        <i class="ti ti-stars svc-icon"></i>
+        <p class="svc-name">Venue Styling</p>
+        <p class="svc-desc">Full venue transformation, draping &amp; lighting accents</p>
+      </div>
+      <div class="svc-card">
+        <i class="ti ti-clipboard-list svc-icon"></i>
+        <p class="svc-name">Day-Of Coord.</p>
+        <p class="svc-desc">Setup, management &amp; teardown so you stay present</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div>
+        <h2 class="contact-title">Let's Plan Your Day Together</h2>
+        <p class="contact-sub">Reach out — no detail is too small.</p>
+        <div class="c-row">
+          <i class="ti ti-phone"></i>
+          <div>
+            <p class="c-lbl">Phone</p>
+            <p class="c-val"><a href="tel:+15550000000">(555) 000-0000</a></p>
+          </div>
+        </div>
+        <div class="c-row">
+          <i class="ti ti-mail"></i>
+          <div>
+            <p class="c-lbl">Email</p>
+            <p class="c-val"><a href="mailto:hello@a2zeventsdesign.com">hello@a2zeventsdesign.com</a></p>
+          </div>
+        </div>
+        <div class="c-row">
+          <i class="ti ti-map-pin"></i>
+          <div>
+            <p class="c-lbl">Location</p>
+            <p class="c-val">Corona, California</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="soc-label">Follow along</p>
+        <div class="soc-row">
+          <a href="#" class="soc"><i class="ti ti-brand-instagram"></i> Instagram</a>
+          <a href="#" class="soc"><i class="ti ti-brand-facebook"></i> Facebook</a>
+          <a href="#" class="soc"><i class="ti ti-brand-tiktok"></i> TikTok</a>
+          <a href="#" class="soc"><i class="ti ti-brand-pinterest"></i> Pinterest</a>
+        </div>
+        <div class="quote-block">
+          <p>"Available for bookings across Inland Empire and beyond — inquire today about your date."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    ✦ &nbsp; © 2026 A2Z Events &amp; Design · Corona, CA · All rights reserved &nbsp; ✦
+  </footer>
+
+</body>
+</html>
